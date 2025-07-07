@@ -5,7 +5,6 @@ of course Delphi has the safe mem of Rust, the OOP quicker and elegant than C++ 
 <br>
 so for newbies there it is a sample to make Windows Server isapi applications flying<br>
 <br>
-<br>
 1. using a scalable allocator (see mine repositories)<br>
 2. set keep-alive<br> 
 3. set max connections higher<br>
