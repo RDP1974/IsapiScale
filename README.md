@@ -16,19 +16,19 @@ no jealousy towards techempower's c++ frameworks 🙂<br>
 <br>
 a test with D12.3 and a old cpu within WS 2025, push the number of messages with sql query from 750 to 5000 for sec (MySQL 8.4.5** LTS)<br>
 (ab -n 10000 -c 1000 -k http://192.168.1.16/address/isapiscale.dll/scale) with 1000 concurrent users<br>
-Document Path:          /isapi/isapiscale.dll/scale<br>
-Document Length:        2425 bytes<br>
-Concurrency Level:      1000<br>
-Time taken for tests:   1.968 seconds<br>
+document path:          /isapi/isapiscale.dll/scale<br>
+document length:        2425 bytes<br>
+concurrency level:      1000<br>
+time taken for tests:   1.968 seconds<br>
 Complete requests:      10000<br>
-Failed requests:        0<br>
-Keep-Alive requests:    10000<br>
-Total transferred:      25950000 bytes<br>
+failed requests:        0<br>
+keep-alive requests:    10000<br>
+total transferred:      25950000 bytes<br>
 HTML transferred:       24250000 bytes<br>
-Requests per second:    5081.92 [#/sec] (mean)<br>
-Time per request:       196.776 [ms] (mean)<br>
-Time per request:       0.197 [ms] (mean, across all concurrent requests)<br>
-Transfer rate:          12878.49 [Kbytes/sec] received<br>
+requests per second:    5081.92 [#/sec] (mean)<br>
+time per request:       196.776 [ms] (mean)<br>
+time per request:       0.197 [ms] (mean, across all concurrent requests)<br>
+transfer rate:          12878.49 [Kbytes/sec] received<br>
 <br>
 this should increment linearly among all the cpu cores<br>
 <br>
