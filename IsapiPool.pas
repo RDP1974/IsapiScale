@@ -78,6 +78,7 @@ begin
   DBC.ConnectionDefName := 'MySQL_Pool';
   DBC.LoginPrompt := False;
   DBC.FetchOptions.Unidirectional := True;
+  DBC.UpdateOptions.RequestLive := False;
   Q := TFDQuery.Create(nil);
   Q.Connection := DBC;
   Q.FetchOptions.Unidirectional := True;
