@@ -14,21 +14,21 @@ so for newbies there it is a sample to make Windows Server isapi applications fl
 7. let me suggest a fastest json parser https://github.com/ahausladen/JsonDataObjects and use type casting instead of variants*:<br>
 no jealousy towards techempower's c++ frameworks 🙂<br>
 <br>
-a test with D12.3 and a old cpu within WS 2025, push the number of messages with sql query from 750 to 4700 for sec (MySQL 8.4.5** LTS)<br>
-(ab -n 1000 -c 100 -k http://address/isapi/isapiscale.dll/scale)<br>
+a test with D12.3 and a old cpu within WS 2025, push the number of messages with sql query from 750 to 5000 for sec (MySQL 8.4.5** LTS)<br>
+(ab -n 10000 -c 1000 -k http://192.168.1.16/isapi/isapiscale.dll/scale)(1000 concurrent users)<br>
 Document Path:          /isapi/isapiscale.dll/scale<br>
 Document Length:        2425 bytes<br>
-Concurrency Level:      100<br>
-Time taken for tests:   0.212 seconds<br>
-Complete requests:      1000<br>
+Concurrency Level:      1000<br>
+Time taken for tests:   1.968 seconds<br>
+Complete requests:      10000<br>
 Failed requests:        0<br>
-Keep-Alive requests:    1000<br>
-Total transferred:      2595000 bytes<br>
-HTML transferred:       2425000 bytes<br>
-Requests per second:    4715.27 [#/sec] (mean)<br>
-Time per request:       21.208 [ms] (mean)<br>
-Time per request:       0.212 [ms] (mean, across all concurrent requests)<br>
-Transfer rate:          11949.34 [Kbytes/sec] received<br>
+Keep-Alive requests:    10000<br>
+Total transferred:      25950000 bytes<br>
+HTML transferred:       24250000 bytes<br>
+Requests per second:    5081.92 [#/sec] (mean)<br>
+Time per request:       196.776 [ms] (mean)<br>
+Time per request:       0.197 [ms] (mean, across all concurrent requests)<br>
+Transfer rate:          12878.49 [Kbytes/sec] received<br>
 <br>
 this should increment linearly among all the cpu cores<br>
 <br>
