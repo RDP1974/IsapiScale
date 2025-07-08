@@ -15,7 +15,7 @@ so for newbies there it is a sample to make Windows Server isapi applications fl
 no jealousy towards techempower's c++ frameworks 🙂<br>
 <br>
 a test with D12.3 and a old cpu within WS 2025, push the number of messages with sql query from 750 to 5000 for sec (MySQL 8.4.5** LTS)<br>
-(ab -n 10000 -c 1000 -k http://192.168.1.16/address/isapiscale.dll/scale) with 1000 concurrent users<br>
+(ab -n 10000 -c 1000 -k http://address/isapiscale.dll/scale) with 1000 concurrent users<br>
 document path:          /isapi/isapiscale.dll/scale<br>
 document length:        2425 bytes<br>
 concurrency level:      1000<br>
