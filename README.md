@@ -15,6 +15,7 @@ so for newbies there it is a sample to make Windows Server isapi applications fl
 no jealousy towards techempower's c++ frameworks 🙂<br>
 <br>
 a test with D12.3 and a old cpu within WS 2025, push the number of messages with sql query from 750 to 4700 for sec (MySQL 8.4.5** LTS)<br>
+(ab -n 1000 -c 100 -k http://192.168.1.16/isapi/isapiscale.dll/scale)<br>
 this should increment linearly among all the cpu cores<br>
 <br>
 * cast the type eg. Obj.S['one'] := 'thisisastring' Obj.I['two'] := 2<br>
