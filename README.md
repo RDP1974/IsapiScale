@@ -12,7 +12,7 @@ so for newbies there it is a sample to make Windows Server isapi applications fl
 5. manage easy threadvar for database objects<br>
 6. use database pooling<br>
 7. let me suggest a fastest json parser https://github.com/ahausladen/JsonDataObjects and use type casting instead of variants*:<br>
-no jealousy towards techemperor's c++ frameworks 🙂<br>
+no jealousy towards techempower's c++ frameworks 🙂<br>
 <br>
 a test with D12.3 and a old cpu within WS 2025, push the number of messages with sql query from 750 to 4700 for sec (MySQL 8.4.5** LTS)<br>
 this should increment linearly among all the cpu cores<br>
