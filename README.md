@@ -25,7 +25,7 @@ failed requests:        0<br>
 keep-alive requests:    10000<br>
 total transferred:      25950000 bytes<br>
 HTML transferred:       24250000 bytes<br>
-requests per second:    <b>5081.92</b> [#/sec] (mean)<br>
+<b>requests per second: 5081.92 [#/sec] (mean)</b><br>
 time per request:       196.776 [ms] (mean)<br>
 time per request:       0.197 [ms] (mean, across all concurrent requests)<br>
 transfer rate:          12878.49 [Kbytes/sec] received<br>
