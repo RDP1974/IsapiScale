@@ -35,6 +35,14 @@ threadvar
 threadvar
   ThInit: boolean;
 
+type
+  TMyConnRecover = class
+   procedure Recover(ASender, AInitiator: TObject; AException: Exception; var AAction: TFDPhysConnectionRecoverAction);
+  end;
+
+threadvar
+  RetryC: TMyConnRecover;
+
 procedure InitConn;
 
 implementation
@@ -65,20 +73,25 @@ begin
   oParams.Free;
 end;
 
-//to complete: to record or class procedure
-procedure Reconnect(ASender, AInitiator: TObject; AException: Exception; var AAction: TFDPhysConnectionRecoverAction);
+procedure TMyConnRecover.Recover(ASender, AInitiator: TObject; AException: Exception; var AAction: TFDPhysConnectionRecoverAction);
 begin
-  AAction := faRetry; //detect EFDDBEngineException servergone
+   if (AException is EFDDBEngineException) and
+     (EFDDBEngineException(AException).Kind = ekServerGone) then
+    AAction := faRetry
+  else
+    AAction := faFail;
 end;
 
 procedure InitConn;
 begin
   ThInit:=True;
+  RetryC := TMyConnRecover.Create;
   DBC := TFDConnection.Create(nil);
   DBC.ConnectionDefName := 'MySQL_Pool';
   DBC.LoginPrompt := False;
   DBC.FetchOptions.Unidirectional := True;
   DBC.UpdateOptions.RequestLive := False;
+  DBC.OnRecover := RetryC.Recover;
   Q := TFDQuery.Create(nil);
   Q.Connection := DBC;
   Q.FetchOptions.Unidirectional := True;
