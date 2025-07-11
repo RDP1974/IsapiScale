@@ -36,12 +36,12 @@ threadvar
   ThInit: boolean;
 
 type
-  TMyConnRecover = class
+  TConnRecover = class
    procedure Recover(ASender, AInitiator: TObject; AException: Exception; var AAction: TFDPhysConnectionRecoverAction);
   end;
 
 threadvar
-  RetryC: TMyConnRecover;
+  RetryC: TConnRecover;
 
 procedure InitConn;
 
@@ -60,8 +60,8 @@ begin
   oParams.Add('Pooled=True');
   oParams.Add('Compress=False');
   oParams.Add('UseSSL=False');
-  oParams.Add('POOL_CleanupTimeout=3600000');
-  oParams.Add('POOL_ExpireTimeout=600000');
+  oParams.Add('POOL_CleanupTimeout=3600'); //36000000
+  oParams.Add('POOL_ExpireTimeout=600'); //6000000 10MIN
   oParams.Add('POOL_MaximumItems=200');
   FDManager.Close;
 
@@ -73,11 +73,13 @@ begin
   oParams.Free;
 end;
 
-procedure TMyConnRecover.Recover(ASender, AInitiator: TObject; AException: Exception; var AAction: TFDPhysConnectionRecoverAction);
+procedure TConnRecover.Recover(ASender, AInitiator: TObject; AException: Exception; var AAction: TFDPhysConnectionRecoverAction);
 begin
    if (AException is EFDDBEngineException) and
      (EFDDBEngineException(AException).Kind = ekServerGone) then
-    AAction := faRetry
+     begin
+      AAction := faRetry;
+     end
   else
     AAction := faFail;
 end;
@@ -85,7 +87,7 @@ end;
 procedure InitConn;
 begin
   ThInit:=True;
-  RetryC := TMyConnRecover.Create;
+  RetryC := TConnRecover.Create;
   DBC := TFDConnection.Create(nil);
   DBC.ConnectionDefName := 'MySQL_Pool';
   DBC.LoginPrompt := False;
