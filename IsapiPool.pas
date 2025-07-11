@@ -1,7 +1,7 @@
 unit IsapiPool;
 
 // 7 jul 2025 Roberto Della Pasqua www.dellapasqua.com
-// todo add trap exception ondisconnect FDC.OnRecover faRetry
+// 11 jul 2025 added trap exception for disconnect, tested working
 
 interface
 
