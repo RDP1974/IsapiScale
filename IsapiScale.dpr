@@ -20,9 +20,9 @@ function DllMain(hinst: HINST; fdwReason: DWORD; lpReserved: Pointer): BOOL; std
 begin
   if fdwReason = DLL_THREAD_DETACH then // cleaning threadvar
   begin
+   if Assigned(RetryC) then FreeAndNil(RetryC);
    if Assigned(Q) then FreeAndNil(Q);
    if Assigned(Q2) then FreeAndNil(Q2);
-   if Assigned(RetryC) then FreeAndNil(RetryC);
    if Assigned(DBC) then FreeAndNil(DBC);
   end;
   Result := True;
