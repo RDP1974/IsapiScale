@@ -3,7 +3,7 @@ library IsapiScale;
 
 uses
   //MSHeap,
-  //RDPMM64,
+  RDPMM64,
   Windows,
   SysUtils,
   Winapi.ActiveX,
@@ -37,7 +37,7 @@ begin
   CoInitFlags := COINIT_MULTITHREADED;
   Application.Initialize;
   Application.WebModuleClass := WebModuleClass;
-//  Application.MaxConnections := 5000;
-//  Application.CacheConnections := True;
+  Application.MaxConnections := 5000;
+  Application.CacheConnections := True;
   Application.Run;
 end.
