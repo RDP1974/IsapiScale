@@ -25,7 +25,7 @@ failed requests:        0<br>
 keep-alive requests:    10000<br>
 total transferred:      25950000 bytes<br>
 HTML transferred:       24250000 bytes<br>
-<b><i>requests per second: 5081.92 [#/sec] (mean)</i></b><br>
+<b><i>requests per second: 5081.92*** [#/sec] (mean)</i></b><br>
 time per request:       196.776 [ms] (mean)<br>
 time per request:       0.197 [ms] (mean, across all concurrent requests)<br>
 transfer rate:          12878.49 [Kbytes/sec] received<br>
@@ -34,6 +34,7 @@ this should increment linearly among all the cpu cores<br>
 <br>
 * cast the type eg. Obj.S['one'] := 'thisisastring' Obj.I['two'] := 2<br>
 ** as client libs use libmysql.dll, libssl-3-x64.dll, libcrypto-3-x64.dll
+*** identical score among MsHeap and RDPMM64 (tbbmalloc) allocators<br>
 <br>
 <br>
 let me know opinions or errors, kind regards<br>
