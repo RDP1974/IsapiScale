@@ -38,7 +38,7 @@ threadvar
 type
   TConnRecover = class
    procedure Recover(ASender, AInitiator: TObject; AException: Exception; var AAction: TFDPhysConnectionRecoverAction);
-  end;
+end;
 
 threadvar
   RetryC: TConnRecover;
