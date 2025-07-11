@@ -1,9 +1,10 @@
 library IsapiScale;
 // 7 jul 2025 Roberto Della Pasqua www.dellapasqua.com
+// 11 jul 2025 added trap exception for reconnect, tested working
 
 uses
-  //MSHeap,
-  RDPMM64,
+  MSHeap,
+  //RDPMM64,
   Windows,
   SysUtils,
   Winapi.ActiveX,

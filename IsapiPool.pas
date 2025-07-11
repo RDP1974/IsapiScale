@@ -1,7 +1,7 @@
 unit IsapiPool;
 
 // 7 jul 2025 Roberto Della Pasqua www.dellapasqua.com
-// 11 jul 2025 added trap exception for disconnect, tested working
+// 11 jul 2025 added trap exception for reconnect, tested working
 
 interface
 
@@ -60,8 +60,8 @@ begin
   oParams.Add('Pooled=True');
   oParams.Add('Compress=False');
   oParams.Add('UseSSL=False');
-  oParams.Add('POOL_CleanupTimeout=3600'); //36000000
-  oParams.Add('POOL_ExpireTimeout=600'); //6000000 10MIN
+  oParams.Add('POOL_CleanupTimeout=3600000');
+  oParams.Add('POOL_ExpireTimeout=600000');
   oParams.Add('POOL_MaximumItems=200');
   FDManager.Close;
 
@@ -75,12 +75,9 @@ end;
 
 procedure TConnRecover.Recover(ASender, AInitiator: TObject; AException: Exception; var AAction: TFDPhysConnectionRecoverAction);
 begin
-   if (AException is EFDDBEngineException) and
-     (EFDDBEngineException(AException).Kind = ekServerGone) then
-     begin
-      AAction := faRetry;
-     end
-  else
+ if (AException is EFDDBEngineException) and (EFDDBEngineException(AException).Kind = ekServerGone) then
+    AAction := faRetry
+ else
     AAction := faFail;
 end;
 
