@@ -33,7 +33,7 @@ transfer rate:          12878.49 [Kbytes/sec] received<br>
 this should increment linearly among all the cpu cores<br>
 <br>
 * cast the type eg. Obj.S['one'] := 'thisisastring' Obj.I['two'] := 2<br>
-** as client libs use libmysql.dll, libssl-3-x64.dll, libcrypto-3-x64.dll
+** as client libs use libmysql.dll, libssl-3-x64.dll, libcrypto-3-x64.dll<br>
 *** identical score among MsHeap and RDPMM64 (tbbmalloc) allocators<br>
 <br>
 <br>
