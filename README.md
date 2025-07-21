@@ -8,7 +8,7 @@ so for newbies there it is a sample to make Windows Server isapi applications fl
 1. using a scalable allocator (see mine repositories)<br>
 2. set keep-alive<br> 
 3. set max connections higher<br>
-4. don't use globally unique firedac elements and save the time to recreate connections and queries, so:<br>
+4. don't use globally unique firedac elements thus saving time to recreate connections and queries, so:<br>
 5. manage easy threadvar for database objects<br>
 6. use database pooling<br>
 7. let me suggest a fastest json parser https://github.com/ahausladen/JsonDataObjects and use type casting instead of variants*:<br>
