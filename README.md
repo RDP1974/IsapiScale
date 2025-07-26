@@ -1,8 +1,6 @@
 # IsapiScale
 a pair of hints to make Delphi isapi web app scalable and reliable<br>
 <br>
-// 26 july 2025 added config fmAll for better reliability<br>
-<br>
 of course Delphi has the safe memory as Rust, the OOP quicker and elegant than C++ thanks to an optimized VMT, faster execution time due to smaller pe size that fit into L1 cpu cache<br>
 <br>
 so for newbies there it is a sample to make Windows Server isapi applications flying<br>
