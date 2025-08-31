@@ -11,7 +11,7 @@ so for newbies there it is a sample to make Windows Server isapi applications fl
 4. don't use globally unique firedac elements also saving time to recreate connections and queries, so:<br>
 5. manage easy threadvar for database objects<br>
 6. use database pooling<br>
-7. let me suggest a fastest json parser https://github.com/ahausladen/JsonDataObjects and use type casting instead of variants*:<br>
+7. let me suggest a fastest json parser https://github.com/ahausladen/JsonDataObjects and use type casting instead of variants*:
 no jealousy towards techempower's c++ frameworks 🙂<br>
 <br>
 a test with D12.3 and i9900 cpu within windows server 2025, push the number of messages with sql query from 750 to 5000 for sec (MySQL 8.4.5** LTS)<br>
