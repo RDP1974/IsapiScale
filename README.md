@@ -26,7 +26,7 @@ keep-alive requests:    10000<br>
 total transferred:      25950000 bytes<br>
 HTML transferred:       24250000 bytes<br>
 <b><i>requests per second: 5081.92*** [#/sec] (mean)</i></b><br>
-(ubuntu 25.04 identical vm and mysql config -> apache mod ~2500 reqs/s)<br>
+(ubuntu 25.04 same vm and mysql config -> apache mod ~2500 reqs/s)<br>
 time per request:       196.776 [ms] (mean)<br>
 time per request:       0.197 [ms] (mean, across all concurrent requests)<br>
 transfer rate:          12878.49 [Kbytes/sec] received<br>
