@@ -6,13 +6,15 @@ unit IsapiPool;
 interface
 
 uses
-  Windows,
+  System.SysUtils,
   Classes,
+  FireDAC.DApt,
   FireDAC.Stan.Intf,
   FireDAC.Stan.Option,
   FireDAC.Stan.Error,
   FireDAC.Stan.Def,
   FireDAC.Stan.Pool,
+  FireDAC.Stan.Async,
   FireDAC.Phys.Intf,
   FireDAC.Comp.Client;
 
